@@ -1,0 +1,770 @@
+/* ==========================================
+   STYLE.CSS — Sistem Pakar Gaya Belajar VAK
+   Tema: ELEGAN / PREMIUM / BERKARAKTER
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap');
+
+/* ===== 1. BASE & RESET ===== */
+html, body, [class*="css"] {
+    font-family: 'Inter', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.stApp {
+    background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(99,102,241,0.05), transparent 60%),
+        radial-gradient(1000px 500px at 110% 10%, rgba(139,92,246,0.04), transparent 60%),
+        #f8fafc;
+}
+header[data-testid="stHeader"] { display: none !important; }
+
+/* Warna dasar teks: Spesifik agar tidak merusak teks putih di background gelap */
+[data-testid="stAppViewBlockContainer"] p,
+[data-testid="stAppViewBlockContainer"] label,
+[data-testid="stAppViewBlockContainer"] h1,
+[data-testid="stAppViewBlockContainer"] h2,
+[data-testid="stAppViewBlockContainer"] h3,
+[data-testid="stAppViewBlockContainer"] h4,
+[data-testid="stAppViewBlockContainer"] h5,
+[data-testid="stAppViewBlockContainer"] h6,
+.stCheckbox label p {
+    color: #0f172a !important;
+}
+
+/* ===== 2. LAYOUT TENGAH ===== */
+[data-testid="stAppViewBlockContainer"],
+.block-container {
+    padding-top: 2.5rem !important;
+    padding-bottom: 3rem !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+}
+
+/* ===== 3. SCROLLBAR ===== */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ===== 4. SIDEBAR ===== */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+    border-right: 1px solid #e2e8f0;
+    padding-top: 24px;
+}
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] label,
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3,
+section[data-testid="stSidebar"] h4,
+section[data-testid="stSidebar"] .sidebar-title,
+section[data-testid="stSidebar"] .sidebar-sub,
+section[data-testid="stSidebar"] .sidebar-nav-label,
+section[data-testid="stSidebar"] .stCaption,
+section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
+    color: #0f172a !important;
+}
+
+.sidebar-brand {
+    width: 52px; height: 52px;
+    margin: 0 auto 18px auto;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border-radius: 14px;
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(15,23,42,0.25), inset 0 1px 0 rgba(255,255,255,0.08);
+    position: relative;
+}
+.sidebar-brand::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 18px;
+    background: radial-gradient(circle, rgba(99,102,241,0.18), transparent 70%);
+    z-index: -1;
+}
+.sidebar-brand svg { width: 26px; height: 26px; }
+
+.sidebar-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #0f172a !important;
+    text-align: center;
+    margin-bottom: 2px;
+    letter-spacing: -0.2px;
+}
+.sidebar-sub {
+    font-size: 0.75rem;
+    color: #64748b !important;
+    text-align: center;
+    margin-bottom: 28px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+.sidebar-nav-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #94a3b8 !important;
+    letter-spacing: 1.5px;
+    margin: 8px 0 12px 4px;
+    text-transform: uppercase;
+}
+
+/* Tombol navigasi sidebar */
+section[data-testid="stSidebar"] .stButton > button {
+    background: transparent !important;
+    color: #475569 !important;
+    border: 1px solid transparent !important;
+    border-radius: 10px !important;
+    padding: 10px 14px !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+    box-shadow: none !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    transition: all 0.18s ease !important;
+    width: 100% !important;
+}
+section[data-testid="stSidebar"] .stButton > button:hover {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    border-color: #e2e8f0 !important;
+}
+section[data-testid="stSidebar"] .stButton > button[kind="primary"] {
+    background: linear-gradient(135deg, #1e293b, #0f172a) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    box-shadow: 0 6px 18px rgba(15,23,42,0.28) !important;
+}
+section[data-testid="stSidebar"] .stButton > button[kind="primary"]:hover {
+    background: linear-gradient(135deg, #0f172a, #020617) !important;
+    color: #ffffff !important;
+}
+
+/* Teks di dalam tombol sidebar */
+section[data-testid="stSidebar"] .stButton > button p,
+section[data-testid="stSidebar"] .stButton > button span,
+section[data-testid="stSidebar"] .stButton > button div {
+    color: inherit !important;
+}
+section[data-testid="stSidebar"] .stButton > button[kind="primary"] p,
+section[data-testid="stSidebar"] .stButton > button[kind="primary"] span,
+section[data-testid="stSidebar"] .stButton > button[kind="primary"] div {
+    color: #ffffff !important;
+}
+
+/* ===== 5. HERO SECTION ===== */
+.hero {
+    background:
+        radial-gradient(700px 350px at 15% 0%, rgba(99,102,241,0.28), transparent 60%),
+        radial-gradient(700px 350px at 100% 100%, rgba(139,92,246,0.25), transparent 60%),
+        linear-gradient(135deg, #0b1220 0%, #0f172a 55%, #111c33 100%);
+    border-radius: 20px;
+    padding: 60px 48px;
+    text-align: center;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(15,23,42,0.28), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(99,102,241,0.6), transparent);
+}
+
+/* FIX teks hero */
+.hero h1, .hero h1 * {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+.hero p, .hero p * {
+    color: #cbd5e1 !important;
+    -webkit-text-fill-color: #cbd5e1 !important;
+}
+.hero p b, .hero p b * {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-weight: 600;
+}
+.hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.07);
+    color: #cbd5e1 !important;
+    -webkit-text-fill-color: #cbd5e1 !important;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 22px;
+    border: 1px solid rgba(255,255,255,0.14);
+    backdrop-filter: blur(6px);
+}
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    margin: 0 0 18px 0;
+    letter-spacing: -1.5px;
+}
+.hero-sub {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #94a3b8 !important;
+    -webkit-text-fill-color: #94a3b8 !important;
+    max-width: 640px;
+    margin: 0 auto 28px auto;
+    text-align: center !important; 
+    display: block !important;     
+}
+.hero-sub b {
+    color: #e2e8f0 !important;
+    -webkit-text-fill-color: #e2e8f0 !important;
+    font-weight: 600;
+}
+.hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+.hero-meta span {
+    color: #cbd5e1 !important;
+    -webkit-text-fill-color: #cbd5e1 !important;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ===== 6. SECTION TITLE ===== */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a !important;
+    margin: 8px 0 6px 0;
+    letter-spacing: -0.5px;
+    position: relative;
+    padding-left: 14px;
+}
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 6px; bottom: 6px;
+    width: 4px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #6366f1, #8b5cf6);
+}
+.section-sub {
+    font-size: 0.95rem;
+    color: #64748b !important;
+    margin-bottom: 24px;
+    padding-left: 14px;
+}
+
+/* ===== 7. VAK & STEP CARDS ===== */
+.vak-card, .step-card {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.vak-card { padding: 30px 26px; }
+.step-card { padding: 26px 24px; }
+
+.vak-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+}
+.vak-visual::before { background: linear-gradient(90deg, #3b82f6, #6366f1); }
+.vak-audio::before { background: linear-gradient(90deg, #8b5cf6, #a855f7); }
+.vak-kines::before { background: linear-gradient(90deg, #10b981, #059669); }
+
+.vak-card:hover, .step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(15,23,42,0.10);
+    border-color: #cbd5e1;
+}
+.vak-card:hover::before { transform: scaleX(1); }
+
+.vak-icon {
+    width: 46px; height: 46px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 18px;
+}
+.vak-icon svg { width: 22px; height: 22px; }
+.vak-visual .vak-icon { background: #eff6ff; color: #2563eb; box-shadow: inset 0 0 0 1px #dbeafe; }
+.vak-audio .vak-icon { background: #f5f3ff; color: #7c3aed; box-shadow: inset 0 0 0 1px #ede9fe; }
+.vak-kines .vak-icon { background: #ecfdf5; color: #059669; box-shadow: inset 0 0 0 1px #d1fae5; }
+
+.vak-tag {
+    display: inline-block;
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+}
+.vak-visual .vak-tag { background: #eff6ff; color: #2563eb; }
+.vak-audio .vak-tag { background: #f5f3ff; color: #7c3aed; }
+.vak-kines .vak-tag { background: #ecfdf5; color: #059669; }
+
+.vak-card h3, .step-card h4 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #0f172a !important;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.3px;
+}
+.vak-card p, .step-card p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: #64748b !important;
+    margin: 0;
+}
+
+.step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1rem;
+    margin-bottom: 16px;
+    box-shadow: 0 6px 16px rgba(15,23,42,0.22);
+}
+
+/* ===== 8. CTA BANNER ===== */
+.cta-banner {
+    background:
+        radial-gradient(500px 200px at 0% 0%, rgba(99,102,241,0.10), transparent 60%),
+        radial-gradient(500px 200px at 100% 100%, rgba(139,92,246,0.10), transparent 60%),
+        #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 34px 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(15,23,42,0.04);
+}
+.cta-banner h3 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0f172a !important;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.4px;
+}
+.cta-banner p {
+    font-size: 0.95rem;
+    color: #64748b !important;
+    margin: 0;
+}
+
+/* ===== 9. PAGE HEADER ===== */
+.page-header {
+    background: linear-gradient(180deg, #ffffff, #fbfcfe);
+    border-radius: 16px;
+    padding: 26px 30px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(15,23,42,0.04);
+}
+.page-header::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #6366f1, #8b5cf6);
+}
+.page-header h1 {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #0f172a !important;
+    margin: 0 0 4px 0;
+    letter-spacing: -0.5px;
+}
+.page-header p {
+    color: #64748b !important;
+    margin: 0;
+    font-size: 0.92rem;
+}
+
+/* ===== 10. KOMPONEN KONSULTASI ===== */
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0 !important;
+    padding: 4px 16px;
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+}
+div[data-testid="stVerticalBlockBorderWrapper"]:hover {
+    border-color: #c7d2fe !important;
+    box-shadow: 0 6px 18px rgba(99,102,241,0.08);
+}
+.stCheckbox input[type="checkbox"] { accent-color: #6366f1; }
+.stCheckbox label { cursor: pointer; }
+
+.counter-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(15,23,42,0.04);
+}
+.counter-box .lbl { color: #64748b; font-size: 0.88rem; font-weight: 500; }
+.counter-box .val { color: #4f46e5; font-weight: 800; font-size: 1rem; }
+
+/* ===== 11. HASIL & DISTRIBUSI ===== */
+.result-panel {
+    background:
+        radial-gradient(600px 300px at 0% 0%, rgba(99,102,241,0.20), transparent 60%),
+        radial-gradient(600px 300px at 100% 100%, rgba(139,92,246,0.18), transparent 60%),
+        linear-gradient(135deg, #0b1220 0%, #0f172a 55%, #111c33 100%);
+    border-radius: 18px;
+    padding: 42px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(15,23,42,0.25), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.result-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6, #a855f7);
+}
+.result-label {
+    color: #94a3b8 !important;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+.result-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+    color: #ffffff !important;
+}
+.result-desc {
+    color: #cbd5e1 !important;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    background: rgba(255,255,255,0.04);
+    padding: 20px 24px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    margin-top: 16px;
+    text-align: left;
+}
+
+.saran-card {
+    background: #ffffff;
+    border-left: 4px solid #6366f1;
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 16px rgba(15,23,42,0.05);
+    position: relative;
+}
+.saran-card h4 {
+    color: #6366f1 !important;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    margin: 0 0 8px 0;
+}
+.saran-card p {
+    color: #0f172a !important;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.score-row { display: flex; align-items: center; gap: 14px; margin: 14px 0; }
+.score-label { width: 130px; font-weight: 700; color: #0f172a; font-size: 0.88rem; }
+.score-bar-bg {
+    flex: 1;
+    background: #f1f5f9;
+    border-radius: 999px;
+    height: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(15,23,42,0.06);
+}
+.score-bar-fill {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 8px rgba(99,102,241,0.35);
+}
+.score-pct { width: 50px; text-align: right; font-weight: 800; color: #4f46e5; font-size: 0.88rem; }
+
+/* ===== 12. TABEL TRACE ===== */
+.trace-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.84rem;
+    margin-top: 10px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 14px rgba(15,23,42,0.04);
+}
+.trace-table thead th {
+    background: linear-gradient(180deg, #f8fafc, #f1f5f9);
+    color: #64748b !important;
+    text-align: left;
+    padding: 12px;
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #e2e8f0;
+}
+.trace-table tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    vertical-align: top;
+    background: #ffffff;
+}
+.trace-table tbody tr:hover { background: #f8fafc; }
+.trace-table tbody tr:last-child td { border-bottom: none; }
+.trace-iter-badge {
+    display: inline-block;
+    background: #eef2ff;
+    color: #4338ca !important;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.72rem;
+}
+.trace-stop { color: #dc2626 !important; font-weight: 700; }
+.trace-new-fact {
+    display: inline-block;
+    background: #ecfdf5;
+    color: #047857 !important;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.76rem;
+}
+
+/* ===== 13. RULE BOX (BASIS PENGETAHUAN) ===== */
+.rule-box {
+    background: linear-gradient(180deg, #ffffff, #fbfcfe);
+    border: 1px solid #e2e8f0;
+    border-left: 3px solid #6366f1;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    font-size: 0.82rem;
+    color: #0f172a !important;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 4px rgba(15,23,42,0.03);
+}
+.rule-box:hover {
+    border-left-color: #0f172a;
+    transform: translateX(3px);
+    box-shadow: 0 4px 14px rgba(99,102,241,0.08);
+}
+
+/* ===== 14. TOMBOL UTAMA (CTA & ANALISIS) ===== */
+.stButton > button {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: #ffffff !important;
+    border: none;
+    border-radius: 10px;
+    padding: 0.72em 1.8em;
+    font-weight: 600;
+    font-size: 0.92rem;
+    letter-spacing: 0.2px;
+    transition: all 0.22s ease;
+    width: 100%;
+    box-shadow: 0 6px 18px rgba(15,23,42,0.18);
+}
+.stButton > button:hover {
+    background: linear-gradient(135deg, #0f172a, #020617);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 26px rgba(15,23,42,0.28);
+}
+.stButton > button:active { transform: translateY(0); }
+.stButton > button:disabled {
+    background: #e2e8f0 !important;
+    color: #94a3b8 !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+.stButton > button p, .stButton > button span, .stButton > button div {
+    color: inherit !important;
+}
+.stButton > button:disabled p, .stButton > button:disabled span, .stButton > button:disabled div {
+    color: #94a3b8 !important;
+}
+
+/* Tombol Download */
+.stDownloadButton > button {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 2px 8px rgba(15,23,42,0.05) !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s !important;
+}
+.stDownloadButton > button:hover {
+    border-color: #6366f1 !important;
+    color: #4f46e5 !important;
+    box-shadow: 0 6px 18px rgba(99,102,241,0.12) !important;
+}
+.stDownloadButton > button p, .stDownloadButton > button span, .stDownloadButton > button div {
+    color: inherit !important;
+}
+
+/* ===== 15. WIDGET STREAMLIT LAINNYA ===== */
+div[data-testid="stExpander"] {
+    background: #ffffff;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(15,23,42,0.04);
+}
+div[data-testid="stExpander"] summary {
+    font-weight: 600;
+    padding: 12px 16px !important;
+    color: #0f172a !important;
+}
+div[data-testid="stExpander"] summary:hover { background: #f8fafc; }
+
+div[data-testid="stAlert"] {
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(15,23,42,0.04);
+}
+div[data-testid="stAlert"] p { color: #0f172a !important; }
+
+div[data-testid="stProgress"] > div > div {
+    background: #f1f5f9 !important;
+    border-radius: 999px !important;
+    height: 8px !important;
+}
+div[data-testid="stProgress"] > div > div > div {
+    background: linear-gradient(90deg, #6366f1, #8b5cf6) !important;
+    border-radius: 999px !important;
+}
+
+.stTextInput input {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    color: #0f172a !important;
+    padding: 10px 14px !important;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+.stTextInput input:focus {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.12) !important;
+}
+
+.stTabs [data-baseweb="tab-list"] {
+    gap: 4px;
+    background: transparent;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0;
+}
+.stTabs [data-baseweb="tab"] {
+    background: transparent;
+    border-radius: 8px 8px 0 0;
+    padding: 10px 18px;
+    font-weight: 600;
+    color: #64748b;
+    border: none;
+    transition: all 0.2s;
+    font-size: 0.88rem;
+}
+.stTabs [data-baseweb="tab"]:hover {
+    color: #0f172a;
+    background: #f8fafc;
+}
+.stTabs [aria-selected="true"] {
+    background: #ffffff !important;
+    color: #4f46e5 !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid #6366f1 !important;
+}
+
+/* ===== 16. FOOTER & SKELETON ===== */
+.footer {
+    text-align: center;
+    color: #94a3b8 !important;
+    font-size: 0.78rem;
+    margin-top: 48px;
+    padding: 24px 0;
+    border-top: 1px solid #e2e8f0;
+    font-weight: 500;
+}
+.skeleton {
+    background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 6px;
+    height: 14px;
+    margin: 8px 0;
+}
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ===== 17. RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero { padding: 38px 24px; }
+    .hero-title { font-size: 2rem; }
+    .hero-sub { font-size: 0.95rem; }
+    .result-value { font-size: 1.6rem !important; }
+    .result-panel { padding: 26px !important; }
+    .section-title { font-size: 1.2rem; }
+    .score-label { width: 90px !important; font-size: 0.82rem !important; }
+}
