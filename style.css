@@ -768,3 +768,36 @@ div[data-testid="stProgress"] > div > div > div {
     .section-title { font-size: 1.2rem; }
     .score-label { width: 90px !important; font-size: 0.82rem !important; }
 }
+
+/* ===== 18. PERBAIKAN TOTAL TAB & DAFTAR FAKTA ===== */
+/* Paksa latar belakang tab dan panelnya jadi putih bersih */
+.stTabs [data-baseweb="tab-panel"] {
+    background-color: #ffffff !important;
+    padding: 20px !important;
+    border-radius: 0 0 12px 12px;
+    border: 1px solid #e2e8f0;
+    border-top: none;
+}
+
+/* Paksa latar belakang area tab (tombolnya) jadi putih */
+.stTabs [data-baseweb="tab-list"] {
+    background-color: #ffffff !important;
+}
+
+/* Pastikan teks tab yang aktif warnanya ungu menyala */
+.stTabs [aria-selected="true"] {
+    color: #4f46e5 !important; 
+    background-color: #ffffff !important;
+}
+
+/* Paksa kotak pencarian dan teks di dalamnya terbaca */
+.stTextInput input {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+}
+
+/* Paksa kotak aturan (rule-box) di tab aturan agar terang */
+.rule-box {
+    background: #f8fafc !important;
+    color: #0f172a !important;
+}
