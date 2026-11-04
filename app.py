@@ -8,12 +8,29 @@ from collections import Counter
 # 1. KONFIGURASI HALAMAN
 # ==========================================
 st.set_page_config(
+
     page_title="Sistem Pakar Gaya Belajar",
     page_icon=None,
     layout="wide",  # Tetap wide, tapi kita batasi lebarnya via CSS
     initial_sidebar_state="expanded"
 )
-
+st.markdown("""
+<style>
+/* PAKSA MUTLAK TAB JADI PUTIH DAN TEKS HITAM */
+[data-testid="stTabs"] [data-baseweb="tab-panel"] {
+    background-color: #ffffff !important;
+}
+[data-testid="stTabs"] [data-baseweb="tab-panel"] * {
+    color: #000000 !important;
+}
+[data-testid="stTabs"] button[data-baseweb="tab"] {
+    color: #475569 !important;
+}
+[data-testid="stTabs"] button[aria-selected="true"] {
+    color: #4f46e5 !important; 
+}
+</style>
+""", unsafe_allow_html=True)
 # ==========================================
 # 2. LOAD CSS EKSTERNAL
 # ==========================================
