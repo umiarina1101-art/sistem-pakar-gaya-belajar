@@ -27,6 +27,40 @@ except FileNotFoundError:
     st.warning("File `style.css` tidak ditemukan. Aplikasi berjalan tanpa styling.")
 
 # ==========================================
+# PERBAIKAN WARNA TEKS TAB (ANTI HILANG)
+# ==========================================
+st.markdown("""
+<style>
+/* Memperbaiki teks Tab yang tidak terlihat */
+.stTabs [data-baseweb="tab-list"] button p {
+    color: #475569 !important; /* Warna abu-abu gelap untuk tab tidak aktif */
+    font-weight: 600 !important;
+}
+.stTabs [data-baseweb="tab-list"] button[aria-selected="true"] p {
+    color: #7c3aed !important; /* Warna ungu menyala untuk tab aktif */
+    font-weight: 800 !important;
+}
+.stTabs [data-baseweb="tab-highlight"] {
+    background-color: #7c3aed !important;
+}
+
+/* Memperbaiki teks di dalam tab (Daftar Fakta / Aturan) */
+.stTabs [data-baseweb="tab-panel"] p, 
+.stTabs [data-baseweb="tab-panel"] span,
+.stTabs [data-baseweb="tab-panel"] div,
+.stTabs [data-baseweb="tab-panel"] h4 {
+    color: #1e293b !important; /* Paksa jadi gelap agar terbaca di background terang */
+}
+
+/* Memperbaiki kotak input search */
+.stTextInput input {
+    color: #1e293b !important;
+    background-color: #ffffff !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# ==========================================
 # 3. LOAD RULES
 # ==========================================
 @st.cache_data(show_spinner=False)
