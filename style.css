@@ -41,13 +41,16 @@ header[data-testid="stHeader"] [data-testid="stExpandSidebarButton"] {
 }
 
 /* Warna dasar teks: Spesifik agar tidak merusak teks putih di background gelap */
-[data-testid="stAppViewBlockContainer"] :is(p, label, h1, h2, h3, h4, h5, h6, li),
-[data-testid="stMain"] :is(p, label, h1, h2, h3, h4, h5, h6, li),
-[data-testid="stMainBlockContainer"] :is(p, label, h1, h2, h3, h4, h5, h6, li),
-.block-container :is(p, label, h1, h2, h3, h4, h5, h6, li),
+[data-testid="stAppViewBlockContainer"] p,
+[data-testid="stAppViewBlockContainer"] label,
+[data-testid="stAppViewBlockContainer"] h1,
+[data-testid="stAppViewBlockContainer"] h2,
+[data-testid="stAppViewBlockContainer"] h3,
+[data-testid="stAppViewBlockContainer"] h4,
+[data-testid="stAppViewBlockContainer"] h5,
+[data-testid="stAppViewBlockContainer"] h6,
 .stCheckbox label p {
     color: #0f172a !important;
-    -webkit-text-fill-color: #0f172a !important;
 }
 
 /* ===== 2. LAYOUT TENGAH ===== */
@@ -731,16 +734,13 @@ div[data-testid="stProgress"] > div > div > div {
     box-shadow: 0 0 0 3px rgba(99,102,241,0.12) !important;
 }
 
-.stTabs [data-baseweb="tab-list"],
-.stTabs [role="tablist"] {
+.stTabs [data-baseweb="tab-list"] {
     gap: 4px;
     background: #ffffff !important;
     border-bottom: 1px solid #e2e8f0;
     padding-bottom: 0;
 }
-.stTabs [data-baseweb="tab"],
-.stTabs [data-testid="stTab"],
-.stTabs [role="tab"] {
+.stTabs [data-baseweb="tab"] {
     background: #ffffff !important;
     border-radius: 8px 8px 0 0;
     padding: 10px 18px;
@@ -753,31 +753,17 @@ div[data-testid="stProgress"] > div > div > div {
 }
 .stTabs [data-baseweb="tab"] p,
 .stTabs [data-baseweb="tab"] span,
-.stTabs [data-baseweb="tab"] div,
-.stTabs [data-testid="stTab"] p,
-.stTabs [data-testid="stTab"] span,
-.stTabs [data-testid="stTab"] div,
-.stTabs [role="tab"] p,
-.stTabs [role="tab"] span,
-.stTabs [role="tab"] div {
+.stTabs [data-baseweb="tab"] div {
     color: #0f172a !important;
     -webkit-text-fill-color: #0f172a !important;
 }
-.stTabs [data-baseweb="tab"]:hover,
-.stTabs [data-testid="stTab"]:hover,
-.stTabs [role="tab"]:hover {
+.stTabs [data-baseweb="tab"]:hover {
     color: #0f172a !important;
     background: #f8fafc !important;
 }
 .stTabs [data-baseweb="tab"]:hover p,
 .stTabs [data-baseweb="tab"]:hover span,
-.stTabs [data-baseweb="tab"]:hover div,
-.stTabs [data-testid="stTab"]:hover p,
-.stTabs [data-testid="stTab"]:hover span,
-.stTabs [data-testid="stTab"]:hover div,
-.stTabs [role="tab"]:hover p,
-.stTabs [role="tab"]:hover span,
-.stTabs [role="tab"]:hover div {
+.stTabs [data-baseweb="tab"]:hover div {
     color: #0f172a !important;
     -webkit-text-fill-color: #0f172a !important;
 }
@@ -794,19 +780,13 @@ div[data-testid="stProgress"] > div > div > div {
     color: #0f172a !important;
     -webkit-text-fill-color: #0f172a !important;
 }
-.stTabs [data-baseweb="tab-panel"],
-.stTabs [data-testid="stTabPanel"],
-.stTabs [role="tabpanel"] {
+.stTabs [data-baseweb="tab-panel"] {
     background: #ffffff !important;
     color: #0f172a !important;
     border-radius: 0 0 12px 12px;
 }
 .stTabs [data-baseweb="tab-panel"] p,
-.stTabs [data-baseweb="tab-panel"] li,
-.stTabs [data-testid="stTabPanel"] p,
-.stTabs [data-testid="stTabPanel"] li,
-.stTabs [role="tabpanel"] p,
-.stTabs [role="tabpanel"] li {
+.stTabs [data-baseweb="tab-panel"] li {
     color: #0f172a !important;
     -webkit-text-fill-color: #0f172a !important;
 }
