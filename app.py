@@ -9,25 +9,25 @@ from collections import Counter
 # ==========================================
 st.set_page_config(
     page_title="Sistem Pakar Gaya Belajar",
-    page_icon="🧠",
-    layout="wide",
-    initial_sidebar_state="expanded",
+    page_icon=None,
+    layout="wide",  # Tetap wide, tapi kita batasi lebarnya via CSS
+    initial_sidebar_state="expanded"
 )
 
 # ==========================================
-# 2. LOAD CSS
+# 2. LOAD CSS EKSTERNAL
 # ==========================================
 def load_css(file_name: str):
-    try:
-        with open(file_name, encoding="utf-8") as f:
-            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-    except FileNotFoundError:
-        st.warning(f"File `{file_name}` tidak ditemukan.")
+    with open(file_name, encoding="utf-8") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-load_css("style.css")
+try:
+    load_css("style.css")
+except FileNotFoundError:
+    st.warning("File `style.css` tidak ditemukan. Aplikasi berjalan tanpa styling.")
 
 # ==========================================
-# 3. LOAD RULES (logika tidak diubah)
+# 3. LOAD RULES
 # ==========================================
 @st.cache_data(show_spinner=False)
 def load_rules(path: str = "rules.json"):
@@ -73,10 +73,7 @@ def forward_chaining_trace(fakta_terpilih, aturan):
     memori = set(fakta_terpilih)
     jejak = []
     iterasi_trace = []
-    iterasi_trace.append({
-        "iterasi": 0, "memori": sorted(memori),
-        "aturan_aktif": [], "aturan_dipilih": "—", "fakta_baru": None,
-    })
+    iterasi_trace.append({"iterasi": 0, "memori": sorted(memori), "aturan_aktif": [], "aturan_dipilih": "—", "fakta_baru": None})
     iter_num = 1
     while True:
         aturan_aktif = []
@@ -85,31 +82,18 @@ def forward_chaining_trace(fakta_terpilih, aturan):
                 continue
             premis = rule["premis"]
             op = rule["operator"]
-            cocok = (
-                all(p in memori for p in premis) if op == "AND"
-                else any(p in memori for p in premis)
-            )
+            cocok = (all(p in memori for p in premis) if op == "AND" else any(p in memori for p in premis))
             if cocok:
                 aturan_aktif.append(rule)
         if not aturan_aktif:
-            iterasi_trace.append({
-                "iterasi": iter_num, "memori": sorted(memori),
-                "aturan_aktif": [], "aturan_dipilih": "STOP", "fakta_baru": None,
-            })
+            iterasi_trace.append({"iterasi": iter_num, "memori": sorted(memori), "aturan_aktif": [], "aturan_dipilih": "STOP", "fakta_baru": None})
             break
         rule_dipilih = aturan_aktif[0]
         memori.add(rule_dipilih["kesimpulan"])
         fakta_baru = rule_dipilih["kesimpulan"]
         op_str = f" {rule_dipilih['operator']} "
-        jejak.append(
-            f"Aturan **{rule_dipilih['kode']}**: "
-            f"{op_str.join(rule_dipilih['premis'])} → {fakta_baru}"
-        )
-        iterasi_trace.append({
-            "iterasi": iter_num, "memori": sorted(memori),
-            "aturan_aktif": [r["kode"] for r in aturan_aktif],
-            "aturan_dipilih": rule_dipilih["kode"], "fakta_baru": fakta_baru,
-        })
+        jejak.append(f"Aturan **{rule_dipilih['kode']}**: {op_str.join(rule_dipilih['premis'])} → {fakta_baru}")
+        iterasi_trace.append({"iterasi": iter_num, "memori": sorted(memori), "aturan_aktif": [r["kode"] for r in aturan_aktif], "aturan_dipilih": rule_dipilih["kode"], "fakta_baru": fakta_baru})
         iter_num += 1
     return memori, jejak, iterasi_trace
 
@@ -227,33 +211,7 @@ with st.sidebar:
 
 
 # ==========================================
-# 8. NAVIGASI MOBILE (tombol kustom)
-# ==========================================
-def render_mobile_nav():
-    """Tombol navigasi yang hanya muncul di HP (< 769px)."""
-    st.markdown('<div class="mobile-nav">', unsafe_allow_html=True)
-    st.markdown('<div class="mobile-nav-title">Navigasi Cepat</div>', unsafe_allow_html=True)
-    c1, c2 = st.columns(2)
-    with c1:
-        if st.button("🏠 Beranda", use_container_width=True, key="mob_home"):
-            st.session_state.halaman = "welcome"
-            st.rerun()
-        if st.button("📚 Basis", use_container_width=True, key="mob_basis"):
-            st.session_state.halaman = "basis"
-            st.rerun()
-    with c2:
-        if st.button("📝 Konsultasi", use_container_width=True, key="mob_konsul"):
-            st.session_state.halaman = "konsultasi"
-            reset_konsultasi()
-            st.rerun()
-        if st.button("📖 Panduan", use_container_width=True, key="mob_panduan"):
-            st.session_state.halaman = "panduan"
-            st.rerun()
-    st.markdown('</div>', unsafe_allow_html=True)
-
-
-# ==========================================
-# 9. HALAMAN: WELCOME
+# 8. HALAMAN: WELCOME
 # ==========================================
 def render_welcome():
     st.markdown("""
@@ -268,6 +226,8 @@ def render_welcome():
     </div>
     """, unsafe_allow_html=True)
 
+    # --- CTA ATAS ---
+    # Gunakan perbandingan kolom [1, 2, 1] agar tombol tidak terlalu lebar
     col_a, col_b, col_c = st.columns([1, 2, 1])
     with col_b:
         if st.button("Mulai Konsultasi", use_container_width=True, key="cta_mulai"):
@@ -342,12 +302,14 @@ def render_welcome():
 
     st.markdown("<div style='height: 40px;'></div>", unsafe_allow_html=True)
 
+    # --- CTA BAWAH ---
     st.markdown("""
     <div class="cta-banner">
         <h3>Siap menemukan gaya belajarmu?</h3>
         <p>Hanya butuh 2 menit. Gratis, tanpa login.</p>
     </div>
     """, unsafe_allow_html=True)
+    # Gunakan perbandingan kolom [1, 2, 1] di sini juga
     col_a, col_b, col_c = st.columns([1, 2, 1])
     with col_b:
         if st.button("Mulai Sekarang", use_container_width=True, key="cta_mulai_2"):
@@ -357,7 +319,7 @@ def render_welcome():
 
 
 # ==========================================
-# 10. HALAMAN: KONSULTASI
+# 9. HALAMAN: KONSULTASI
 # ==========================================
 def render_konsultasi():
     if not st.session_state.konsultasi_selesai:
@@ -451,7 +413,6 @@ def render_konsultasi():
             "Trace Iterasi", "Jejak Inferensi",
         ])
 
-        # ---------- TAB 1: HASIL ----------
         with tab1:
             if hasil_terpilih:
                 st.markdown(
@@ -483,10 +444,11 @@ def render_konsultasi():
                     + "\n".join(st.session_state.jejak) + "\n"
                 )
                 st.download_button(
-                    label="⬇ Unduh Hasil Analisis (.txt)",
+                    label="Unduh Hasil Analisis (.txt)",
                     data=teks_download,
                     file_name="Hasil_Gaya_Belajar.txt",
                     mime="text/plain",
+                    use_container_width=True,
                 )
             else:
                 st.markdown(
@@ -498,7 +460,6 @@ def render_konsultasi():
                     unsafe_allow_html=True,
                 )
 
-        # ---------- TAB 2: DISTRIBUSI ----------
         with tab2:
             st.markdown("#### Distribusi Kecenderungan")
             if skor:
@@ -526,7 +487,6 @@ def render_konsultasi():
             else:
                 st.info("Belum ada data distribusi.")
 
-        # ---------- TAB 3: TRACE ----------
         with tab3:
             st.caption("Tabel setiap iterasi mesin inferensi.")
             trace = st.session_state.iterasi_trace
@@ -559,7 +519,6 @@ def render_konsultasi():
                     unsafe_allow_html=True,
                 )
 
-        # ---------- TAB 4: JEJAK ----------
         with tab4:
             st.markdown("**Fakta Awal yang Dipilih:**")
             awal = ", ".join([f for f in st.session_state.memori_kerja if f.startswith("F")])
@@ -573,7 +532,7 @@ def render_konsultasi():
 
 
 # ==========================================
-# 11. HALAMAN: BASIS PENGETAHUAN
+# 10. HALAMAN: BASIS PENGETAHUAN
 # ==========================================
 def render_basis():
     st.markdown("""
@@ -588,10 +547,7 @@ def render_basis():
     with tab1:
         q = st.text_input("Cari fakta (ID atau kata kunci):", "")
         st.write(f"Total: **{len(data['fakta'])}** fakta")
-        filtered = [
-            f for f in data["fakta"]
-            if not q or q.lower() in f["id"].lower() or q.lower() in f["teks"].lower()
-        ]
+        filtered = [f for f in data["fakta"] if not q or q.lower() in f["id"].lower() or q.lower() in f["teks"].lower()]
         if not filtered:
             st.info("Tidak ada fakta yang cocok.")
         for f in filtered:
@@ -610,14 +566,11 @@ def render_basis():
             st.info("Tidak ada aturan yang cocok.")
         for r in filtered:
             premis_str = f' {r["operator"]} '.join(r["premis"])
-            st.markdown(
-                f'<div class="rule-box">IF {premis_str} THEN {r["kesimpulan"]}</div>',
-                unsafe_allow_html=True,
-            )
+            st.markdown(f'<div class="rule-box">IF {premis_str} THEN {r["kesimpulan"]}</div>', unsafe_allow_html=True)
 
 
 # ==========================================
-# 12. HALAMAN: PANDUAN
+# 11. HALAMAN: PANDUAN
 # ==========================================
 def render_panduan():
     st.markdown("""
@@ -644,11 +597,8 @@ def render_panduan():
 
 
 # ==========================================
-# 13. ROUTER
+# 12. ROUTER
 # ==========================================
-# Navigasi mobile selalu dirender di atas konten (hanya tampil < 769px via CSS)
-render_mobile_nav()
-
 if st.session_state.halaman == "welcome":
     render_welcome()
 elif st.session_state.halaman == "konsultasi":
@@ -660,7 +610,7 @@ elif st.session_state.halaman == "panduan":
 
 
 # ==========================================
-# 14. FOOTER
+# 13. FOOTER
 # ==========================================
 st.markdown(
     '<div class="footer">Sistem Pakar Gaya Belajar VAK &middot; v2.0 &middot; UTS Sistem Pakar</div>',
