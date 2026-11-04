@@ -15,19 +15,19 @@ st.set_page_config(
 )
 
 # ==========================================
-# 2. LOAD CSS EKSTERNAL
+# 2. LOAD CSS
 # ==========================================
 def load_css(file_name: str):
-    with open(file_name, encoding="utf-8") as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    try:
+        with open(file_name, encoding="utf-8") as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    except FileNotFoundError:
+        st.warning(f"File `{file_name}` tidak ditemukan.")
 
-try:
-    load_css("style.css")
-except FileNotFoundError:
-    st.warning("File `style.css` tidak ditemukan. Aplikasi berjalan tanpa styling.")
+load_css("style.css")
 
 # ==========================================
-# 3. LOAD RULES
+# 3. LOAD RULES (logika tidak diubah)
 # ==========================================
 @st.cache_data(show_spinner=False)
 def load_rules(path: str = "rules.json"):
@@ -227,7 +227,33 @@ with st.sidebar:
 
 
 # ==========================================
-# 8. HALAMAN: WELCOME
+# 8. NAVIGASI MOBILE (tombol kustom)
+# ==========================================
+def render_mobile_nav():
+    """Tombol navigasi yang hanya muncul di HP (< 769px)."""
+    st.markdown('<div class="mobile-nav">', unsafe_allow_html=True)
+    st.markdown('<div class="mobile-nav-title">Navigasi Cepat</div>', unsafe_allow_html=True)
+    c1, c2 = st.columns(2)
+    with c1:
+        if st.button("🏠 Beranda", use_container_width=True, key="mob_home"):
+            st.session_state.halaman = "welcome"
+            st.rerun()
+        if st.button("📚 Basis", use_container_width=True, key="mob_basis"):
+            st.session_state.halaman = "basis"
+            st.rerun()
+    with c2:
+        if st.button("📝 Konsultasi", use_container_width=True, key="mob_konsul"):
+            st.session_state.halaman = "konsultasi"
+            reset_konsultasi()
+            st.rerun()
+        if st.button("📖 Panduan", use_container_width=True, key="mob_panduan"):
+            st.session_state.halaman = "panduan"
+            st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
+
+
+# ==========================================
+# 9. HALAMAN: WELCOME
 # ==========================================
 def render_welcome():
     st.markdown("""
@@ -331,7 +357,7 @@ def render_welcome():
 
 
 # ==========================================
-# 9. HALAMAN: KONSULTASI
+# 10. HALAMAN: KONSULTASI
 # ==========================================
 def render_konsultasi():
     if not st.session_state.konsultasi_selesai:
@@ -344,7 +370,6 @@ def render_konsultasi():
 
         fakta_terpilih = []
 
-        # Render checkbox — pakai container border bawaan Streamlit (CSS override sudah dihapus)
         for fakta in data["fakta"]:
             label = f"**[{fakta['id']}]** {fakta['teks']}"
             with st.container(border=True):
@@ -457,7 +482,6 @@ def render_konsultasi():
                     "Aturan yang Dijalankan:\n"
                     + "\n".join(st.session_state.jejak) + "\n"
                 )
-                # st.download_button tidak mendukung use_container_width di beberapa versi
                 st.download_button(
                     label="⬇ Unduh Hasil Analisis (.txt)",
                     data=teks_download,
@@ -549,7 +573,7 @@ def render_konsultasi():
 
 
 # ==========================================
-# 10. HALAMAN: BASIS PENGETAHUAN
+# 11. HALAMAN: BASIS PENGETAHUAN
 # ==========================================
 def render_basis():
     st.markdown("""
@@ -593,7 +617,7 @@ def render_basis():
 
 
 # ==========================================
-# 11. HALAMAN: PANDUAN
+# 12. HALAMAN: PANDUAN
 # ==========================================
 def render_panduan():
     st.markdown("""
@@ -620,8 +644,11 @@ def render_panduan():
 
 
 # ==========================================
-# 12. ROUTER
+# 13. ROUTER
 # ==========================================
+# Navigasi mobile selalu dirender di atas konten (hanya tampil < 769px via CSS)
+render_mobile_nav()
+
 if st.session_state.halaman == "welcome":
     render_welcome()
 elif st.session_state.halaman == "konsultasi":
@@ -633,7 +660,7 @@ elif st.session_state.halaman == "panduan":
 
 
 # ==========================================
-# 13. FOOTER
+# 14. FOOTER
 # ==========================================
 st.markdown(
     '<div class="footer">Sistem Pakar Gaya Belajar VAK &middot; v2.0 &middot; UTS Sistem Pakar</div>',
