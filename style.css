@@ -19,7 +19,7 @@ html, body, [class*="css"] {
 }
 header[data-testid="stHeader"] { display: none !important; }
 
-/* Warna dasar teks: Spesifik agar tidak merusak teks putih di background gelap */
+/* Warna dasar teks — spesifik agar tidak merusak teks putih di background gelap */
 [data-testid="stAppViewBlockContainer"] p,
 [data-testid="stAppViewBlockContainer"] label,
 [data-testid="stAppViewBlockContainer"] h1,
@@ -90,27 +90,19 @@ section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
 .sidebar-brand svg { width: 26px; height: 26px; }
 
 .sidebar-title {
-    font-size: 1rem;
-    font-weight: 800;
+    font-size: 1rem; font-weight: 800;
     color: #0f172a !important;
-    text-align: center;
-    margin-bottom: 2px;
-    letter-spacing: -0.2px;
+    text-align: center; margin-bottom: 2px; letter-spacing: -0.2px;
 }
 .sidebar-sub {
-    font-size: 0.75rem;
-    color: #64748b !important;
-    text-align: center;
-    margin-bottom: 28px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
+    font-size: 0.75rem; color: #64748b !important;
+    text-align: center; margin-bottom: 28px;
+    font-weight: 500; letter-spacing: 0.3px;
 }
 .sidebar-nav-label {
-    font-size: 0.68rem;
-    font-weight: 700;
+    font-size: 0.68rem; font-weight: 700;
     color: #94a3b8 !important;
-    letter-spacing: 1.5px;
-    margin: 8px 0 12px 4px;
+    letter-spacing: 1.5px; margin: 8px 0 12px 4px;
     text-transform: uppercase;
 }
 
@@ -144,8 +136,6 @@ section[data-testid="stSidebar"] .stButton > button[kind="primary"]:hover {
     background: linear-gradient(135deg, #0f172a, #020617) !important;
     color: #ffffff !important;
 }
-
-/* Teks di dalam tombol sidebar */
 section[data-testid="stSidebar"] .stButton > button p,
 section[data-testid="stSidebar"] .stButton > button span,
 section[data-testid="stSidebar"] .stButton > button div {
@@ -178,8 +168,6 @@ section[data-testid="stSidebar"] .stButton > button[kind="primary"] div {
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(99,102,241,0.6), transparent);
 }
-
-/* FIX teks hero */
 .hero h1, .hero h1 * {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
@@ -200,31 +188,23 @@ section[data-testid="stSidebar"] .stButton > button[kind="primary"] div {
     -webkit-text-fill-color: #cbd5e1 !important;
     padding: 6px 16px;
     border-radius: 999px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;
     margin-bottom: 22px;
     border: 1px solid rgba(255,255,255,0.14);
     backdrop-filter: blur(6px);
 }
 .hero-title {
-    font-size: 3rem;
-    font-weight: 800;
-    line-height: 1.1;
+    font-size: 3rem; font-weight: 800; line-height: 1.1;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
-    margin: 0 0 18px 0;
-    letter-spacing: -1.5px;
+    margin: 0 0 18px 0; letter-spacing: -1.5px;
 }
 .hero-sub {
-    font-size: 1.05rem;
-    line-height: 1.7;
+    font-size: 1.05rem; line-height: 1.7;
     color: #94a3b8 !important;
     -webkit-text-fill-color: #94a3b8 !important;
-    max-width: 640px;
-    margin: 0 auto 28px auto;
-    text-align: center !important; 
-    display: block !important;     
+    max-width: 640px; margin: 0 auto 28px auto;
+    text-align: center !important; display: block !important;
 }
 .hero-sub b {
     color: #e2e8f0 !important;
@@ -232,17 +212,13 @@ section[data-testid="stSidebar"] .stButton > button[kind="primary"] div {
     font-weight: 600;
 }
 .hero-meta {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 8px;
+    display: flex; justify-content: center;
+    gap: 10px; flex-wrap: wrap; margin-top: 8px;
 }
 .hero-meta span {
     color: #cbd5e1 !important;
     -webkit-text-fill-color: #cbd5e1 !important;
-    font-size: 0.82rem;
-    font-weight: 500;
+    font-size: 0.82rem; font-weight: 500;
     padding: 6px 14px;
     background: rgba(255,255,255,0.05);
     border-radius: 999px;
@@ -251,27 +227,21 @@ section[data-testid="stSidebar"] .stButton > button[kind="primary"] div {
 
 /* ===== 6. SECTION TITLE ===== */
 .section-title {
-    font-size: 1.5rem;
-    font-weight: 800;
+    font-size: 1.5rem; font-weight: 800;
     color: #0f172a !important;
-    margin: 8px 0 6px 0;
-    letter-spacing: -0.5px;
-    position: relative;
-    padding-left: 14px;
+    margin: 8px 0 6px 0; letter-spacing: -0.5px;
+    position: relative; padding-left: 14px;
 }
 .section-title::before {
     content: '';
     position: absolute;
     left: 0; top: 6px; bottom: 6px;
-    width: 4px;
-    border-radius: 4px;
+    width: 4px; border-radius: 4px;
     background: linear-gradient(180deg, #6366f1, #8b5cf6);
 }
 .section-sub {
-    font-size: 0.95rem;
-    color: #64748b !important;
-    margin-bottom: 24px;
-    padding-left: 14px;
+    font-size: 0.95rem; color: #64748b !important;
+    margin-bottom: 24px; padding-left: 14px;
 }
 
 /* ===== 7. VAK & STEP CARDS ===== */
@@ -290,15 +260,13 @@ section[data-testid="stSidebar"] .stButton > button[kind="primary"] div {
 .vak-card::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    transform: scaleX(0);
-    transform-origin: left;
+    top: 0; left: 0; right: 0; height: 3px;
+    transform: scaleX(0); transform-origin: left;
     transition: transform 0.35s ease;
 }
 .vak-visual::before { background: linear-gradient(90deg, #3b82f6, #6366f1); }
-.vak-audio::before { background: linear-gradient(90deg, #8b5cf6, #a855f7); }
-.vak-kines::before { background: linear-gradient(90deg, #10b981, #059669); }
+.vak-audio::before  { background: linear-gradient(90deg, #8b5cf6, #a855f7); }
+.vak-kines::before  { background: linear-gradient(90deg, #10b981, #059669); }
 
 .vak-card:hover, .step-card:hover {
     transform: translateY(-4px);
@@ -315,46 +283,34 @@ section[data-testid="stSidebar"] .stButton > button[kind="primary"] div {
 }
 .vak-icon svg { width: 22px; height: 22px; }
 .vak-visual .vak-icon { background: #eff6ff; color: #2563eb; box-shadow: inset 0 0 0 1px #dbeafe; }
-.vak-audio .vak-icon { background: #f5f3ff; color: #7c3aed; box-shadow: inset 0 0 0 1px #ede9fe; }
-.vak-kines .vak-icon { background: #ecfdf5; color: #059669; box-shadow: inset 0 0 0 1px #d1fae5; }
+.vak-audio  .vak-icon { background: #f5f3ff; color: #7c3aed; box-shadow: inset 0 0 0 1px #ede9fe; }
+.vak-kines  .vak-icon { background: #ecfdf5; color: #059669; box-shadow: inset 0 0 0 1px #d1fae5; }
 
 .vak-tag {
     display: inline-block;
-    font-size: 0.66rem;
-    font-weight: 800;
-    letter-spacing: 1.4px;
-    padding: 4px 10px;
-    border-radius: 6px;
-    margin-bottom: 14px;
+    font-size: 0.66rem; font-weight: 800;
+    letter-spacing: 1.4px; padding: 4px 10px;
+    border-radius: 6px; margin-bottom: 14px;
 }
 .vak-visual .vak-tag { background: #eff6ff; color: #2563eb; }
-.vak-audio .vak-tag { background: #f5f3ff; color: #7c3aed; }
-.vak-kines .vak-tag { background: #ecfdf5; color: #059669; }
+.vak-audio  .vak-tag { background: #f5f3ff; color: #7c3aed; }
+.vak-kines  .vak-tag { background: #ecfdf5; color: #059669; }
 
 .vak-card h3, .step-card h4 {
-    font-size: 1.1rem;
-    font-weight: 800;
+    font-size: 1.1rem; font-weight: 800;
     color: #0f172a !important;
-    margin: 0 0 8px 0;
-    letter-spacing: -0.3px;
+    margin: 0 0 8px 0; letter-spacing: -0.3px;
 }
 .vak-card p, .step-card p {
-    font-size: 0.9rem;
-    line-height: 1.65;
-    color: #64748b !important;
-    margin: 0;
+    font-size: 0.9rem; line-height: 1.65;
+    color: #64748b !important; margin: 0;
 }
 
 .step-num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px; height: 38px;
-    border-radius: 10px;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 38px; height: 38px; border-radius: 10px;
     background: linear-gradient(135deg, #1e293b, #0f172a);
-    color: #ffffff;
-    font-weight: 800;
-    font-size: 1rem;
+    color: #ffffff; font-weight: 800; font-size: 1rem;
     margin-bottom: 16px;
     box-shadow: 0 6px 16px rgba(15,23,42,0.22);
 }
@@ -373,16 +329,12 @@ section[data-testid="stSidebar"] .stButton > button[kind="primary"] div {
     box-shadow: 0 8px 24px rgba(15,23,42,0.04);
 }
 .cta-banner h3 {
-    font-size: 1.35rem;
-    font-weight: 800;
+    font-size: 1.35rem; font-weight: 800;
     color: #0f172a !important;
-    margin: 0 0 6px 0;
-    letter-spacing: -0.4px;
+    margin: 0 0 6px 0; letter-spacing: -0.4px;
 }
 .cta-banner p {
-    font-size: 0.95rem;
-    color: #64748b !important;
-    margin: 0;
+    font-size: 0.95rem; color: #64748b !important; margin: 0;
 }
 
 /* ===== 9. PAGE HEADER ===== */
@@ -399,36 +351,24 @@ section[data-testid="stSidebar"] .stButton > button[kind="primary"] div {
 .page-header::before {
     content: '';
     position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 4px;
+    left: 0; top: 0; bottom: 0; width: 4px;
     background: linear-gradient(180deg, #6366f1, #8b5cf6);
 }
 .page-header h1 {
-    font-size: 1.65rem;
-    font-weight: 800;
+    font-size: 1.65rem; font-weight: 800;
     color: #0f172a !important;
-    margin: 0 0 4px 0;
-    letter-spacing: -0.5px;
+    margin: 0 0 4px 0; letter-spacing: -0.5px;
 }
 .page-header p {
     color: #64748b !important;
-    margin: 0;
-    font-size: 0.92rem;
+    margin: 0; font-size: 0.92rem;
 }
 
-/* ===== 10. KOMPONEN KONSULTASI ===== */
-div[data-testid="stVerticalBlockBorderWrapper"] {
-    background: #ffffff;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0 !important;
-    padding: 4px 16px;
-    margin-bottom: 8px;
-    transition: all 0.2s ease;
-}
-div[data-testid="stVerticalBlockBorderWrapper"]:hover {
-    border-color: #c7d2fe !important;
-    box-shadow: 0 6px 18px rgba(99,102,241,0.08);
-}
+/* ===== 10. KOMPONEN KONSULTASI =====
+   CATATAN: Override stVerticalBlockBorderWrapper DIHAPUS
+   agar tidak bentrok dengan st.container(border=True).
+   Streamlit sudah memberi border sendiri.
+*/
 .stCheckbox input[type="checkbox"] { accent-color: #6366f1; }
 .stCheckbox label { cursor: pointer; }
 
@@ -463,35 +403,26 @@ div[data-testid="stVerticalBlockBorderWrapper"]:hover {
 .result-panel::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
+    top: 0; left: 0; right: 0; height: 3px;
     background: linear-gradient(90deg, #6366f1, #8b5cf6, #a855f7);
 }
 .result-label {
     color: #94a3b8 !important;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 2px;
     margin-bottom: 14px;
 }
 .result-value {
-    font-size: 2.2rem;
-    font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: -0.8px;
-    color: #ffffff !important;
+    font-size: 2.2rem; font-weight: 800; line-height: 1.2;
+    letter-spacing: -0.8px; color: #ffffff !important;
 }
 .result-desc {
     color: #cbd5e1 !important;
-    font-size: 0.95rem;
-    line-height: 1.7;
+    font-size: 0.95rem; line-height: 1.7;
     background: rgba(255,255,255,0.04);
-    padding: 20px 24px;
-    border-radius: 10px;
+    padding: 20px 24px; border-radius: 10px;
     border: 1px solid rgba(255,255,255,0.08);
-    margin-top: 16px;
-    text-align: left;
+    margin-top: 16px; text-align: left;
 }
 
 .saran-card {
@@ -505,32 +436,24 @@ div[data-testid="stVerticalBlockBorderWrapper"]:hover {
 }
 .saran-card h4 {
     color: #6366f1 !important;
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.6px;
+    font-size: 0.75rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1.6px;
     margin: 0 0 8px 0;
 }
 .saran-card p {
     color: #0f172a !important;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    margin: 0;
+    font-size: 0.95rem; line-height: 1.7; margin: 0;
 }
 
 .score-row { display: flex; align-items: center; gap: 14px; margin: 14px 0; }
 .score-label { width: 130px; font-weight: 700; color: #0f172a; font-size: 0.88rem; }
 .score-bar-bg {
-    flex: 1;
-    background: #f1f5f9;
-    border-radius: 999px;
-    height: 10px;
-    overflow: hidden;
+    flex: 1; background: #f1f5f9; border-radius: 999px;
+    height: 10px; overflow: hidden;
     box-shadow: inset 0 1px 2px rgba(15,23,42,0.06);
 }
 .score-bar-fill {
-    height: 100%;
-    border-radius: 999px;
+    height: 100%; border-radius: 999px;
     transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 0 8px rgba(99,102,241,0.35);
 }
@@ -538,67 +461,50 @@ div[data-testid="stVerticalBlockBorderWrapper"]:hover {
 
 /* ===== 12. TABEL TRACE ===== */
 .trace-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    font-size: 0.84rem;
-    margin-top: 10px;
-    border-radius: 12px;
-    overflow: hidden;
+    width: 100%; border-collapse: separate; border-spacing: 0;
+    font-size: 0.84rem; margin-top: 10px;
+    border-radius: 12px; overflow: hidden;
     border: 1px solid #e2e8f0;
     box-shadow: 0 4px 14px rgba(15,23,42,0.04);
 }
 .trace-table thead th {
     background: linear-gradient(180deg, #f8fafc, #f1f5f9);
     color: #64748b !important;
-    text-align: left;
-    padding: 12px;
-    font-weight: 700;
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    text-align: left; padding: 12px;
+    font-weight: 700; font-size: 0.72rem;
+    text-transform: uppercase; letter-spacing: 1px;
     border-bottom: 1px solid #e2e8f0;
 }
 .trace-table tbody td {
-    padding: 10px 12px;
-    border-bottom: 1px solid #f1f5f9;
-    color: #0f172a;
-    vertical-align: top;
-    background: #ffffff;
+    padding: 10px 12px; border-bottom: 1px solid #f1f5f9;
+    color: #0f172a; vertical-align: top; background: #ffffff;
 }
 .trace-table tbody tr:hover { background: #f8fafc; }
 .trace-table tbody tr:last-child td { border-bottom: none; }
 .trace-iter-badge {
-    display: inline-block;
-    background: #eef2ff;
+    display: inline-block; background: #eef2ff;
     color: #4338ca !important;
-    padding: 2px 8px;
-    border-radius: 5px;
-    font-weight: 700;
-    font-size: 0.72rem;
+    padding: 2px 8px; border-radius: 5px;
+    font-weight: 700; font-size: 0.72rem;
 }
 .trace-stop { color: #dc2626 !important; font-weight: 700; }
 .trace-new-fact {
-    display: inline-block;
-    background: #ecfdf5;
+    display: inline-block; background: #ecfdf5;
     color: #047857 !important;
-    padding: 2px 8px;
-    border-radius: 5px;
-    font-weight: 700;
-    font-size: 0.76rem;
+    padding: 2px 8px; border-radius: 5px;
+    font-weight: 700; font-size: 0.76rem;
 }
 
-/* ===== 13. RULE BOX (BASIS PENGETAHUAN) ===== */
+/* ===== 13. RULE BOX ===== */
 .rule-box {
-    background: linear-gradient(180deg, #ffffff, #fbfcfe);
+    background: #f8fafc;
     border: 1px solid #e2e8f0;
-    border-left: 3px solid #6366f1;
+    border-left: 4px solid #2563eb;
     border-radius: 10px;
     padding: 12px 16px;
     margin-bottom: 8px;
     font-family: 'JetBrains Mono', monospace;
-    font-weight: 500;
-    font-size: 0.82rem;
+    font-weight: 500; font-size: 0.82rem;
     color: #0f172a !important;
     transition: all 0.2s ease;
     box-shadow: 0 1px 4px rgba(15,23,42,0.03);
@@ -609,16 +515,14 @@ div[data-testid="stVerticalBlockBorderWrapper"]:hover {
     box-shadow: 0 4px 14px rgba(99,102,241,0.08);
 }
 
-/* ===== 14. TOMBOL UTAMA (CTA & ANALISIS) ===== */
+/* ===== 14. TOMBOL UTAMA ===== */
 .stButton > button {
     background: linear-gradient(135deg, #1e293b, #0f172a);
     color: #ffffff !important;
     border: none;
     border-radius: 10px;
     padding: 0.72em 1.8em;
-    font-weight: 600;
-    font-size: 0.92rem;
-    letter-spacing: 0.2px;
+    font-weight: 600; font-size: 0.92rem; letter-spacing: 0.2px;
     transition: all 0.22s ease;
     width: 100%;
     box-shadow: 0 6px 18px rgba(15,23,42,0.18);
@@ -695,10 +599,10 @@ div[data-testid="stProgress"] > div > div > div {
 }
 
 .stTextInput input {
-    background: #ffffff !important;
-    border: 1px solid #e2e8f0 !important;
-    border-radius: 10px !important;
+    background-color: #ffffff !important;
     color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 10px !important;
     padding: 10px 14px !important;
     transition: all 0.2s;
     font-weight: 500;
@@ -708,9 +612,10 @@ div[data-testid="stProgress"] > div > div > div {
     box-shadow: 0 0 0 3px rgba(99,102,241,0.12) !important;
 }
 
+/* ===== 16. TABS — SATU BLOK SAJA (bersih) ===== */
 .stTabs [data-baseweb="tab-list"] {
     gap: 4px;
-    background: transparent;
+    background: #ffffff;
     border-bottom: 1px solid #e2e8f0;
     padding-bottom: 0;
 }
@@ -735,7 +640,19 @@ div[data-testid="stProgress"] > div > div > div {
     border-bottom: 2px solid #6366f1 !important;
 }
 
-/* ===== 16. FOOTER & SKELETON ===== */
+/* Panel tab: hanya atur background & padding, JANGAN paksa warna semua div */
+.stTabs [data-baseweb="tab-panel"] {
+    background-color: #ffffff !important;
+    padding: 20px 4px !important;
+}
+
+/* Teks di dalam panel: cukup p & h4 — JANGAN pakai "div" dan JANGAN pakai "*" */
+.stTabs [data-baseweb="tab-panel"] > p,
+.stTabs [data-baseweb="tab-panel"] h4 {
+    color: #0f172a;
+}
+
+/* ===== 17. FOOTER & SKELETON ===== */
 .footer {
     text-align: center;
     color: #94a3b8 !important;
@@ -754,11 +671,11 @@ div[data-testid="stProgress"] > div > div > div {
     margin: 8px 0;
 }
 @keyframes shimmer {
-    0% { background-position: 200% 0; }
+    0%   { background-position: 200% 0; }
     100% { background-position: -200% 0; }
 }
 
-/* ===== 17. RESPONSIVE ===== */
+/* ===== 18. RESPONSIVE ===== */
 @media (max-width: 768px) {
     .hero { padding: 38px 24px; }
     .hero-title { font-size: 2rem; }
@@ -767,57 +684,4 @@ div[data-testid="stProgress"] > div > div > div {
     .result-panel { padding: 26px !important; }
     .section-title { font-size: 1.2rem; }
     .score-label { width: 90px !important; font-size: 0.82rem !important; }
-}
-
-/* ===== 18. PAKSA TAB JADI PUTIH BERSIH & TEKS HITAM ===== */
-/* Paksa background area tab (kotak luarnya) jadi putih */
-.stTabs [data-baseweb="tab-list"] {
-    background-color: #ffffff !important;
-    border-bottom: 2px solid #e2e8f0 !important;
-}
-
-/* Paksa tombol tab yang TIDAK aktif jadi putih dengan teks abu tua */
-.stTabs [data-baseweb="tab"] {
-    background-color: #ffffff !important;
-    color: #475569 !important;
-}
-
-/* Paksa tombol tab yang AKTIF jadi putih dengan teks biru tegas */
-.stTabs [aria-selected="true"] {
-    background-color: #ffffff !important;
-    color: #2563eb !important;
-    border-bottom: 3px solid #2563eb !important;
-}
-
-/* PAKSA ISI DI DALAM TAB JADI PUTIH BERSIH DAN TEKS HITAM */
-.stTabs [data-baseweb="tab-panel"] {
-    background-color: #ffffff !important;
-    color: #0f172a !important;
-    padding: 24px !important;
-    border: 1px solid #e2e8f0 !important;
-    border-top: none !important;
-    border-radius: 0 0 12px 12px !important;
-}
-
-/* Paksa semua teks di dalam panel tab jadi hitam legam */
-.stTabs [data-baseweb="tab-panel"] p,
-.stTabs [data-baseweb="tab-panel"] span,
-.stTabs [data-baseweb="tab-panel"] div,
-.stTabs [data-baseweb="tab-panel"] h4 {
-    color: #0f172a !important;
-}
-
-/* Paksa kotak input pencarian jadi putih */
-.stTextInput input {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border: 1px solid #cbd5e1 !important;
-}
-
-/* Paksa kotak aturan (rules) jadi putih keabu-abuan dengan teks hitam */
-.rule-box {
-    background-color: #f8fafc !important;
-    color: #0f172a !important;
-    border: 1px solid #e2e8f0 !important;
-    border-left: 4px solid #2563eb !important;
 }
