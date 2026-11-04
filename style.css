@@ -763,6 +763,18 @@ div[data-testid="stProgress"] > div > div > div {
     color: #0f172a !important;
     -webkit-text-fill-color: #0f172a !important;
 }
+.stTabs [data-baseweb="tab"] p,
+.stTabs [data-baseweb="tab"] span,
+.stTabs [data-baseweb="tab"] div,
+.stTabs [data-testid="stTab"] p,
+.stTabs [data-testid="stTab"] span,
+.stTabs [data-testid="stTab"] div,
+.stTabs [role="tab"] p,
+.stTabs [role="tab"] span,
+.stTabs [role="tab"] div {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
 .stTabs [data-baseweb="tab"]:hover,
 .stTabs [data-testid="stTab"]:hover,
 .stTabs [role="tab"]:hover {
@@ -843,4 +855,30 @@ div[data-testid="stProgress"] > div > div > div {
     .result-panel { padding: 26px !important; }
     .section-title { font-size: 1.2rem; }
     .score-label { width: 90px !important; font-size: 0.82rem !important; }
+}
+
+/* ===== 1. TOMBOL SIDEBAR (NAVIGASI) ===== */
+/* Paksa teks navigasi jadi hitam saat tidak aktif */
+section[data-testid="stSidebar"] .stButton > button p,
+section[data-testid="stSidebar"] .stButton > button span,
+section[data-testid="stSidebar"] .stButton > button div {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+/* Paksa teks navigasi jadi putih HANYA saat tombol sedang aktif (diklik) */
+section[data-testid="stSidebar"] .stButton > button[kind="primary"] p,
+section[data-testid="stSidebar"] .stButton > button[kind="primary"] span,
+section[data-testid="stSidebar"] .stButton > button[kind="primary"] div {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* ===== 2. TOMBOL UTAMA (MULAI KONSULTASI / ANALISIS) ===== */
+/* Khusus tombol di luar sidebar, paksa teks jadi putih terang */
+[data-testid="stMain"] .stButton > button p,
+[data-testid="stMain"] .stButton > button span,
+[data-testid="stMain"] .stButton > button div {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 }
