@@ -650,3 +650,30 @@ st.markdown(
     '<div class="footer">Sistem Pakar Gaya Belajar VAK &middot; v2.0 &middot; UTS Sistem Pakar</div>',
     unsafe_allow_html=True,
 )
+
+# ==========================================
+# PERBAIKAN PAKSA WARNA TEKS
+# ==========================================
+st.markdown("""
+<style>
+div[data-testid="stTabs"] p, 
+div[data-testid="stTabs"] span, 
+div[data-testid="stTabs"] div,
+div[data-testid="stTabs"] label {
+    color: #1e293b !important; 
+}
+div[data-baseweb="tab"][aria-selected="true"] p {
+    color: #7c3aed !important; 
+    font-weight: bold !important;
+}
+div[data-testid="stTextInput"] input {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+.rule-box {
+    background-color: #f1f5f9 !important;
+    color: #1e293b !important;
+    border: 1px solid #cbd5e1 !important;
+}
+</style>
+""", unsafe_allow_html=True)
