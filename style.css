@@ -17,7 +17,28 @@ html, body, [class*="css"] {
         radial-gradient(1000px 500px at 110% 10%, rgba(139,92,246,0.04), transparent 60%),
         #f8fafc;
 }
-header[data-testid="stHeader"] { display: none !important; }
+header[data-testid="stHeader"] {
+    display: flex !important;
+    background: transparent !important;
+    pointer-events: none !important;
+}
+header[data-testid="stHeader"] [data-testid="stToolbar"] {
+    background: transparent !important;
+    pointer-events: none !important;
+}
+header[data-testid="stHeader"] [data-testid="stToolbarActions"],
+header[data-testid="stHeader"] [data-testid="stAppDeployButton"],
+header[data-testid="stHeader"] [data-testid="stMainMenu"],
+header[data-testid="stHeader"] [data-testid="stStatusWidget"],
+header[data-testid="stHeader"] [data-testid="stDecoration"] {
+    display: none !important;
+}
+header[data-testid="stHeader"] [data-testid="stExpandSidebarButton"] {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
 
 /* Warna dasar teks: Spesifik agar tidak merusak teks putih di background gelap */
 [data-testid="stAppViewBlockContainer"] p,
@@ -134,13 +155,15 @@ section[data-testid="stSidebar"] .stButton > button:hover {
     color: #0f172a !important;
     border-color: #e2e8f0 !important;
 }
-section[data-testid="stSidebar"] .stButton > button[kind="primary"] {
+section[data-testid="stSidebar"] .stButton > button[kind="primary"],
+section[data-testid="stSidebar"] .stButton > button[data-testid="stBaseButton-primary"] {
     background: linear-gradient(135deg, #1e293b, #0f172a) !important;
     color: #ffffff !important;
     border-color: transparent !important;
     box-shadow: 0 6px 18px rgba(15,23,42,0.28) !important;
 }
-section[data-testid="stSidebar"] .stButton > button[kind="primary"]:hover {
+section[data-testid="stSidebar"] .stButton > button[kind="primary"]:hover,
+section[data-testid="stSidebar"] .stButton > button[data-testid="stBaseButton-primary"]:hover {
     background: linear-gradient(135deg, #0f172a, #020617) !important;
     color: #ffffff !important;
 }
@@ -153,7 +176,10 @@ section[data-testid="stSidebar"] .stButton > button div {
 }
 section[data-testid="stSidebar"] .stButton > button[kind="primary"] p,
 section[data-testid="stSidebar"] .stButton > button[kind="primary"] span,
-section[data-testid="stSidebar"] .stButton > button[kind="primary"] div {
+section[data-testid="stSidebar"] .stButton > button[kind="primary"] div,
+section[data-testid="stSidebar"] .stButton > button[data-testid="stBaseButton-primary"] p,
+section[data-testid="stSidebar"] .stButton > button[data-testid="stBaseButton-primary"] span,
+section[data-testid="stSidebar"] .stButton > button[data-testid="stBaseButton-primary"] div {
     color: #ffffff !important;
 }
 
@@ -710,29 +736,59 @@ div[data-testid="stProgress"] > div > div > div {
 
 .stTabs [data-baseweb="tab-list"] {
     gap: 4px;
-    background: transparent;
+    background: #ffffff !important;
     border-bottom: 1px solid #e2e8f0;
     padding-bottom: 0;
 }
 .stTabs [data-baseweb="tab"] {
-    background: transparent;
+    background: #ffffff !important;
     border-radius: 8px 8px 0 0;
     padding: 10px 18px;
     font-weight: 600;
-    color: #64748b;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
     border: none;
     transition: all 0.2s;
     font-size: 0.88rem;
 }
+.stTabs [data-baseweb="tab"] p,
+.stTabs [data-baseweb="tab"] span,
+.stTabs [data-baseweb="tab"] div {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
 .stTabs [data-baseweb="tab"]:hover {
-    color: #0f172a;
-    background: #f8fafc;
+    color: #0f172a !important;
+    background: #f8fafc !important;
+}
+.stTabs [data-baseweb="tab"]:hover p,
+.stTabs [data-baseweb="tab"]:hover span,
+.stTabs [data-baseweb="tab"]:hover div {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
 }
 .stTabs [aria-selected="true"] {
     background: #ffffff !important;
-    color: #4f46e5 !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
     font-weight: 700 !important;
     border-bottom: 2px solid #6366f1 !important;
+}
+.stTabs [aria-selected="true"] p,
+.stTabs [aria-selected="true"] span,
+.stTabs [aria-selected="true"] div {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+.stTabs [data-baseweb="tab-panel"] {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border-radius: 0 0 12px 12px;
+}
+.stTabs [data-baseweb="tab-panel"] p,
+.stTabs [data-baseweb="tab-panel"] li {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
 }
 
 /* ===== 16. FOOTER & SKELETON ===== */
