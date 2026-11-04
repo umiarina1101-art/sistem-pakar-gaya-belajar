@@ -769,35 +769,55 @@ div[data-testid="stProgress"] > div > div > div {
     .score-label { width: 90px !important; font-size: 0.82rem !important; }
 }
 
-/* ===== 18. PERBAIKAN TOTAL TAB & DAFTAR FAKTA ===== */
-/* Paksa latar belakang tab dan panelnya jadi putih bersih */
-.stTabs [data-baseweb="tab-panel"] {
-    background-color: #ffffff !important;
-    padding: 20px !important;
-    border-radius: 0 0 12px 12px;
-    border: 1px solid #e2e8f0;
-    border-top: none;
-}
-
-/* Paksa latar belakang area tab (tombolnya) jadi putih */
+/* ===== 18. PAKSA TAB JADI PUTIH BERSIH & TEKS HITAM ===== */
+/* Paksa background area tab (kotak luarnya) jadi putih */
 .stTabs [data-baseweb="tab-list"] {
     background-color: #ffffff !important;
+    border-bottom: 2px solid #e2e8f0 !important;
 }
 
-/* Pastikan teks tab yang aktif warnanya ungu menyala */
-.stTabs [aria-selected="true"] {
-    color: #4f46e5 !important; 
+/* Paksa tombol tab yang TIDAK aktif jadi putih dengan teks abu tua */
+.stTabs [data-baseweb="tab"] {
     background-color: #ffffff !important;
+    color: #475569 !important;
 }
 
-/* Paksa kotak pencarian dan teks di dalamnya terbaca */
+/* Paksa tombol tab yang AKTIF jadi putih dengan teks biru tegas */
+.stTabs [aria-selected="true"] {
+    background-color: #ffffff !important;
+    color: #2563eb !important;
+    border-bottom: 3px solid #2563eb !important;
+}
+
+/* PAKSA ISI DI DALAM TAB JADI PUTIH BERSIH DAN TEKS HITAM */
+.stTabs [data-baseweb="tab-panel"] {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    padding: 24px !important;
+    border: 1px solid #e2e8f0 !important;
+    border-top: none !important;
+    border-radius: 0 0 12px 12px !important;
+}
+
+/* Paksa semua teks di dalam panel tab jadi hitam legam */
+.stTabs [data-baseweb="tab-panel"] p,
+.stTabs [data-baseweb="tab-panel"] span,
+.stTabs [data-baseweb="tab-panel"] div,
+.stTabs [data-baseweb="tab-panel"] h4 {
+    color: #0f172a !important;
+}
+
+/* Paksa kotak input pencarian jadi putih */
 .stTextInput input {
     background-color: #ffffff !important;
-    color: #0f172a !important;
+    color: #000000 !important;
+    border: 1px solid #cbd5e1 !important;
 }
 
-/* Paksa kotak aturan (rule-box) di tab aturan agar terang */
+/* Paksa kotak aturan (rules) jadi putih keabu-abuan dengan teks hitam */
 .rule-box {
-    background: #f8fafc !important;
+    background-color: #f8fafc !important;
     color: #0f172a !important;
+    border: 1px solid #e2e8f0 !important;
+    border-left: 4px solid #2563eb !important;
 }
