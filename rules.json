@@ -1,71 +1,394 @@
 {
   "fakta": [
-    {"id": "F1",  "teks": "Saya lebih mudah memahami materi jika ada gambar/diagram", "kategori": "V", "sumber": "DePorter & Hernacki (2013), Quantum Learning; Gunawan (2012), Genius Learning Strategy"},
-    {"id": "F2",  "teks": "Saya suka membuat catatan berwarna atau mind map", "kategori": "V", "sumber": "Buzan (2006), The Mind Map Book; DePorter & Hernacki (2013)"},
-    {"id": "F3",  "teks": "Saya lebih cepat paham setelah menonton video", "kategori": "V", "sumber": "Gunawan (2012), Genius Learning Strategy"},
-    {"id": "F4",  "teks": "Saya memperhatikan ekspresi wajah dosen saat menjelaskan", "kategori": "V", "sumber": "Gilakjani (2012), Visual, Auditory, Kinaesthetic Learning Styles"},
-    {"id": "F5",  "teks": "Saya suka menandai poin penting dengan stabilo atau spidol warna", "kategori": "V", "sumber": "DePorter & Hernacki (2013)"},
-    {"id": "F6",  "teks": "Saya lebih suka membaca buku dengan tata letak yang rapi dan bergambar", "kategori": "V", "sumber": "Gilakjani (2012)"},
-    {"id": "F7",  "teks": "Saya sering membayangkan teks bacaan menjadi sebuah ilustrasi", "kategori": "V", "sumber": "Buzan (2006), The Mind Map Book"},
-
-    {"id": "F8",  "teks": "Saya lebih mudah mengingat materi yang dijelaskan lisan", "kategori": "A", "sumber": "DePorter & Hernacki (2013); Gilakjani (2012)"},
-    {"id": "F9",  "teks": "Saya suka belajar sambil mendengarkan musik/rekaman", "kategori": "A", "sumber": "Gunawan (2012), Genius Learning Strategy"},
-    {"id": "F10", "teks": "Saya sering membaca materi dengan suara keras", "kategori": "A", "sumber": "DePorter & Hernacki (2013)"},
-    {"id": "F11", "teks": "Saya lebih suka mendengarkan penjelasan daripada membaca teks", "kategori": "A", "sumber": "Gilakjani (2012)"},
-    {"id": "F12", "teks": "Saya sering mengulang materi dengan cara menjelaskannya ke orang lain", "kategori": "A", "sumber": "Gunawan (2012)"},
-    {"id": "F13", "teks": "Saya mudah terganggu jika ada suara bising saat belajar", "kategori": "A", "sumber": "DePorter & Hernacki (2013)"},
-    {"id": "F14", "teks": "Saya suka berdiskusi kelompok untuk memahami materi", "kategori": "A", "sumber": "Gilakjani (2012)"},
-
-    {"id": "F15", "teks": "Saya lebih mudah paham jika langsung mempraktikkan", "kategori": "K", "sumber": "DePorter & Hernacki (2013); Gunawan (2012)"},
-    {"id": "F16", "teks": "Saya sulit duduk diam lama dan suka bergerak", "kategori": "K", "sumber": "Gilakjani (2012)"},
-    {"id": "F17", "teks": "Saya lebih suka mencoba-coba daripada membaca teori", "kategori": "K", "sumber": "DePorter & Hernacki (2013)"},
-    {"id": "F18", "teks": "Saya cepat bosan jika hanya membaca buku", "kategori": "K", "sumber": "Gunawan (2012)"},
-    {"id": "F19", "teks": "Saya suka belajar sambil berjalan-jalan kecil atau memainkan benda", "kategori": "K", "sumber": "Gilakjani (2012)"},
-    {"id": "F20", "teks": "Saya lebih suka tugas proyek/praktikum daripada ujian tertulis", "kategori": "K", "sumber": "DePorter & Hernacki (2013)"}
+    {
+      "id": "F1",
+      "teks": "Saya lebih mudah memahami materi jika ada gambar/diagram",
+      "kategori": "V",
+      "sumber": "DePorter & Hernacki (2013), Quantum Learning; Gunawan (2012), Genius Learning Strategy"
+    },
+    {
+      "id": "F2",
+      "teks": "Saya suka membuat catatan berwarna atau mind map",
+      "kategori": "V",
+      "sumber": "Buzan (2006), The Mind Map Book; DePorter & Hernacki (2013)"
+    },
+    {
+      "id": "F3",
+      "teks": "Saya lebih cepat paham setelah menonton video",
+      "kategori": "V",
+      "sumber": "Gunawan (2012), Genius Learning Strategy"
+    },
+    {
+      "id": "F4",
+      "teks": "Saya memperhatikan ekspresi wajah dosen saat menjelaskan",
+      "kategori": "V",
+      "sumber": "Gilakjani (2012), Visual, Auditory, Kinaesthetic Learning Styles"
+    },
+    {
+      "id": "F5",
+      "teks": "Saya suka menandai poin penting dengan stabilo atau spidol warna",
+      "kategori": "V",
+      "sumber": "DePorter & Hernacki (2013)"
+    },
+    {
+      "id": "F6",
+      "teks": "Saya lebih suka membaca buku dengan tata letak yang rapi dan bergambar",
+      "kategori": "V",
+      "sumber": "Gilakjani (2012)"
+    },
+    {
+      "id": "F7",
+      "teks": "Saya sering membayangkan teks bacaan menjadi sebuah ilustrasi",
+      "kategori": "V",
+      "sumber": "Buzan (2006), The Mind Map Book"
+    },
+    {
+      "id": "F8",
+      "teks": "Saya lebih mudah mengingat materi yang dijelaskan lisan",
+      "kategori": "A",
+      "sumber": "DePorter & Hernacki (2013); Gilakjani (2012)"
+    },
+    {
+      "id": "F9",
+      "teks": "Saya suka belajar sambil mendengarkan musik/rekaman",
+      "kategori": "A",
+      "sumber": "Gunawan (2012), Genius Learning Strategy"
+    },
+    {
+      "id": "F10",
+      "teks": "Saya sering membaca materi dengan suara keras",
+      "kategori": "A",
+      "sumber": "DePorter & Hernacki (2013)"
+    },
+    {
+      "id": "F11",
+      "teks": "Saya lebih suka mendengarkan penjelasan daripada membaca teks",
+      "kategori": "A",
+      "sumber": "Gilakjani (2012)"
+    },
+    {
+      "id": "F12",
+      "teks": "Saya sering mengulang materi dengan cara menjelaskannya ke orang lain",
+      "kategori": "A",
+      "sumber": "Gunawan (2012)"
+    },
+    {
+      "id": "F13",
+      "teks": "Saya mudah terganggu jika ada suara bising saat belajar",
+      "kategori": "A",
+      "sumber": "DePorter & Hernacki (2013)"
+    },
+    {
+      "id": "F14",
+      "teks": "Saya suka berdiskusi kelompok untuk memahami materi",
+      "kategori": "A",
+      "sumber": "Gilakjani (2012)"
+    },
+    {
+      "id": "F15",
+      "teks": "Saya lebih mudah paham jika langsung mempraktikkan",
+      "kategori": "K",
+      "sumber": "DePorter & Hernacki (2013); Gunawan (2012)"
+    },
+    {
+      "id": "F16",
+      "teks": "Saya sulit duduk diam lama dan suka bergerak",
+      "kategori": "K",
+      "sumber": "Gilakjani (2012)"
+    },
+    {
+      "id": "F17",
+      "teks": "Saya lebih suka mencoba-coba daripada membaca teori",
+      "kategori": "K",
+      "sumber": "DePorter & Hernacki (2013)"
+    },
+    {
+      "id": "F18",
+      "teks": "Saya cepat bosan jika hanya membaca buku",
+      "kategori": "K",
+      "sumber": "Gunawan (2012)"
+    },
+    {
+      "id": "F19",
+      "teks": "Saya suka belajar sambil berjalan-jalan kecil atau memainkan benda",
+      "kategori": "K",
+      "sumber": "Gilakjani (2012)"
+    },
+    {
+      "id": "F20",
+      "teks": "Saya lebih suka tugas proyek/praktikum daripada ujian tertulis",
+      "kategori": "K",
+      "sumber": "DePorter & Hernacki (2013)"
+    }
   ],
-
   "aturan": [
-    {"kode": "R1",  "premis": ["F1", "F2"],           "operator": "AND", "kesimpulan": "K1", "alasan": "Dua ciri visual kuat bersamaan → cenderung visual"},
-    {"kode": "R2",  "premis": ["F8", "F9"],           "operator": "AND", "kesimpulan": "K2", "alasan": "Dua ciri auditori kuat bersamaan → cenderung auditori"},
-    {"kode": "R3",  "premis": ["F15", "F16"],         "operator": "AND", "kesimpulan": "K3", "alasan": "Dua ciri kinestetik kuat bersamaan → cenderung kinestetik"},
-
-    {"kode": "R4",  "premis": ["F1", "F8"],           "operator": "AND", "kesimpulan": "K4", "alasan": "Ciri visual + auditori → kombinasi V-A"},
-    {"kode": "R5",  "premis": ["F1", "F15"],          "operator": "AND", "kesimpulan": "K5", "alasan": "Ciri visual + kinestetik → kombinasi V-K"},
-    {"kode": "R6",  "premis": ["F8", "F15"],          "operator": "AND", "kesimpulan": "K6", "alasan": "Ciri auditori + kinestetik → kombinasi A-K"},
-
-    {"kode": "R7",  "premis": ["F1", "F8", "F15"],    "operator": "AND", "kesimpulan": "H7", "alasan": "Ketiga ciri V-A-K muncul bersamaan → kombinasi seimbang"},
-
-    {"kode": "R8",  "premis": ["K1", "F3"],           "operator": "AND", "kesimpulan": "H1", "alasan": "Cenderung visual diperkuat ciri visual lain → visual murni"},
-    {"kode": "R9",  "premis": ["K2", "F10"],          "operator": "AND", "kesimpulan": "H2", "alasan": "Cenderung auditori diperkuat ciri auditori lain → auditori murni"},
-    {"kode": "R10", "premis": ["K3", "F17"],          "operator": "AND", "kesimpulan": "H3", "alasan": "Cenderung kinestetik diperkuat ciri kinestetik lain → kinestetik murni"},
-
-    {"kode": "R11", "premis": ["K4", "F2"],           "operator": "AND", "kesimpulan": "H4", "alasan": "Kombinasi V-A diperkuat ciri visual → V-A dominan"},
-    {"kode": "R12", "premis": ["K5", "F16"],          "operator": "AND", "kesimpulan": "H5", "alasan": "Kombinasi V-K diperkuat ciri kinestetik → V-K dominan"},
-    {"kode": "R13", "premis": ["K6", "F18"],          "operator": "AND", "kesimpulan": "H6", "alasan": "Kombinasi A-K diperkuat ciri kinestetik → A-K dominan"},
-
-    {"kode": "R14", "premis": ["F2", "F3"],           "operator": "OR",  "kesimpulan": "K1", "alasan": "Salah satu dari dua ciri visual kuat → cenderung visual"},
-    {"kode": "R15", "premis": ["F9", "F10"],          "operator": "OR",  "kesimpulan": "K2", "alasan": "Salah satu dari dua ciri auditori kuat → cenderung auditori"},
-    {"kode": "R16", "premis": ["F16", "F17"],         "operator": "OR",  "kesimpulan": "K3", "alasan": "Salah satu dari dua ciri kinestetik kuat → cenderung kinestetik"},
-
-    {"kode": "R17", "premis": ["F4", "F5"],           "operator": "OR",  "kesimpulan": "K1", "alasan": "Ciri visual pendukung (ekspresi/warna) → cenderung visual"},
-    {"kode": "R18", "premis": ["F11", "F12"],         "operator": "OR",  "kesimpulan": "K2", "alasan": "Ciri auditori pendukung (dengar/cerita) → cenderung auditori"},
-    {"kode": "R19", "premis": ["F18", "F19"],         "operator": "OR",  "kesimpulan": "K3", "alasan": "Ciri kinestetik pendukung (bergerak) → cenderung kinestetik"},
-
-    {"kode": "R20", "premis": ["F6", "F7"],           "operator": "OR",  "kesimpulan": "K1", "alasan": "Preferensi media visual (buku bergambar/imajinasi) → cenderung visual"},
-    {"kode": "R21", "premis": ["F13", "F14"],         "operator": "OR",  "kesimpulan": "K2", "alasan": "Sensitivitas suara/diskusi → cenderung auditori"},
-    {"kode": "R22", "premis": ["F19", "F20"],         "operator": "OR",  "kesimpulan": "K3", "alasan": "Preferensi aktivitas fisik/proyek → cenderung kinestetik"},
-
-    {"kode": "R23", "premis": ["F1", "F2", "F3"],     "operator": "AND", "kesimpulan": "H1", "alasan": "Tiga ciri visual sekaligus → visual murni (jalur langsung)"},
-    {"kode": "R24", "premis": ["F8", "F9", "F10"],    "operator": "AND", "kesimpulan": "H2", "alasan": "Tiga ciri auditori sekaligus → auditori murni (jalur langsung)"},
-    {"kode": "R25", "premis": ["F15", "F16", "F17"],  "operator": "AND", "kesimpulan": "H3", "alasan": "Tiga ciri kinestetik sekaligus → kinestetik murni (jalur langsung)"}
+    {
+      "kode": "R1",
+      "premis": [
+        "F1",
+        "F2"
+      ],
+      "operator": "AND",
+      "kesimpulan": "K1",
+      "alasan": "Dua ciri visual kuat bersamaan → cenderung visual"
+    },
+    {
+      "kode": "R2",
+      "premis": [
+        "F8",
+        "F9"
+      ],
+      "operator": "AND",
+      "kesimpulan": "K2",
+      "alasan": "Dua ciri auditori kuat bersamaan → cenderung auditori"
+    },
+    {
+      "kode": "R3",
+      "premis": [
+        "F15",
+        "F16"
+      ],
+      "operator": "AND",
+      "kesimpulan": "K3",
+      "alasan": "Dua ciri kinestetik kuat bersamaan → cenderung kinestetik"
+    },
+    {
+      "kode": "R4",
+      "premis": [
+        "F1",
+        "F8"
+      ],
+      "operator": "AND",
+      "kesimpulan": "K4",
+      "alasan": "Ciri visual + auditori → kombinasi V-A"
+    },
+    {
+      "kode": "R5",
+      "premis": [
+        "F1",
+        "F15"
+      ],
+      "operator": "AND",
+      "kesimpulan": "K5",
+      "alasan": "Ciri visual + kinestetik → kombinasi V-K"
+    },
+    {
+      "kode": "R6",
+      "premis": [
+        "F8",
+        "F15"
+      ],
+      "operator": "AND",
+      "kesimpulan": "K6",
+      "alasan": "Ciri auditori + kinestetik → kombinasi A-K"
+    },
+    {
+      "kode": "R7",
+      "premis": [
+        "F1",
+        "F8",
+        "F15"
+      ],
+      "operator": "AND",
+      "kesimpulan": "H7",
+      "alasan": "Ketiga ciri V-A-K muncul bersamaan → kombinasi seimbang"
+    },
+    {
+      "kode": "R8",
+      "premis": [
+        "K1",
+        "F3"
+      ],
+      "operator": "AND",
+      "kesimpulan": "H1",
+      "alasan": "Cenderung visual diperkuat ciri visual lain → visual murni"
+    },
+    {
+      "kode": "R9",
+      "premis": [
+        "K2",
+        "F10"
+      ],
+      "operator": "AND",
+      "kesimpulan": "H2",
+      "alasan": "Cenderung auditori diperkuat ciri auditori lain → auditori murni"
+    },
+    {
+      "kode": "R10",
+      "premis": [
+        "K3",
+        "F17"
+      ],
+      "operator": "AND",
+      "kesimpulan": "H3",
+      "alasan": "Cenderung kinestetik diperkuat ciri kinestetik lain → kinestetik murni"
+    },
+    {
+      "kode": "R11",
+      "premis": [
+        "K4",
+        "F2"
+      ],
+      "operator": "AND",
+      "kesimpulan": "H4",
+      "alasan": "Kombinasi V-A diperkuat ciri visual → V-A dominan"
+    },
+    {
+      "kode": "R12",
+      "premis": [
+        "K5",
+        "F16"
+      ],
+      "operator": "AND",
+      "kesimpulan": "H5",
+      "alasan": "Kombinasi V-K diperkuat ciri kinestetik → V-K dominan"
+    },
+    {
+      "kode": "R13",
+      "premis": [
+        "K6",
+        "F18"
+      ],
+      "operator": "AND",
+      "kesimpulan": "H6",
+      "alasan": "Kombinasi A-K diperkuat ciri kinestetik → A-K dominan"
+    },
+    {
+      "kode": "R14",
+      "premis": [
+        "F2"
+      ],
+      "operator": "OR",
+      "kesimpulan": "K1",
+      "alasan": "Catatan berwarna/mind map sudah menunjukkan cenderung visual (F3 dijadikan penguat pada R8)"
+    },
+    {
+      "kode": "R15",
+      "premis": [
+        "F9"
+      ],
+      "operator": "OR",
+      "kesimpulan": "K2",
+      "alasan": "Belajar sambil mendengarkan musik/rekaman sudah menunjukkan cenderung auditori (F10 dijadikan penguat pada R9)"
+    },
+    {
+      "kode": "R16",
+      "premis": [
+        "F16"
+      ],
+      "operator": "OR",
+      "kesimpulan": "K3",
+      "alasan": "Sulit duduk diam sudah menunjukkan cenderung kinestetik (F17 dijadikan penguat pada R10)"
+    },
+    {
+      "kode": "R17",
+      "premis": [
+        "F4",
+        "F5"
+      ],
+      "operator": "OR",
+      "kesimpulan": "K1",
+      "alasan": "Ciri visual pendukung (ekspresi/warna) → cenderung visual"
+    },
+    {
+      "kode": "R18",
+      "premis": [
+        "F11",
+        "F12"
+      ],
+      "operator": "OR",
+      "kesimpulan": "K2",
+      "alasan": "Ciri auditori pendukung (dengar/cerita) → cenderung auditori"
+    },
+    {
+      "kode": "R19",
+      "premis": [
+        "F18",
+        "F19"
+      ],
+      "operator": "OR",
+      "kesimpulan": "K3",
+      "alasan": "Ciri kinestetik pendukung (bergerak) → cenderung kinestetik"
+    },
+    {
+      "kode": "R20",
+      "premis": [
+        "F6",
+        "F7"
+      ],
+      "operator": "OR",
+      "kesimpulan": "K1",
+      "alasan": "Preferensi media visual (buku bergambar/imajinasi) → cenderung visual"
+    },
+    {
+      "kode": "R21",
+      "premis": [
+        "F13",
+        "F14"
+      ],
+      "operator": "OR",
+      "kesimpulan": "K2",
+      "alasan": "Sensitivitas suara/diskusi → cenderung auditori"
+    },
+    {
+      "kode": "R22",
+      "premis": [
+        "F19",
+        "F20"
+      ],
+      "operator": "OR",
+      "kesimpulan": "K3",
+      "alasan": "Preferensi aktivitas fisik/proyek → cenderung kinestetik"
+    },
+    {
+      "kode": "R23",
+      "premis": [
+        "F1",
+        "F2",
+        "F3"
+      ],
+      "operator": "AND",
+      "kesimpulan": "H1",
+      "alasan": "Tiga ciri visual sekaligus → visual murni (jalur langsung)"
+    },
+    {
+      "kode": "R24",
+      "premis": [
+        "F8",
+        "F9",
+        "F10"
+      ],
+      "operator": "AND",
+      "kesimpulan": "H2",
+      "alasan": "Tiga ciri auditori sekaligus → auditori murni (jalur langsung)"
+    },
+    {
+      "kode": "R25",
+      "premis": [
+        "F15",
+        "F16",
+        "F17"
+      ],
+      "operator": "AND",
+      "kesimpulan": "H3",
+      "alasan": "Tiga ciri kinestetik sekaligus → kinestetik murni (jalur langsung)"
+    }
   ],
-
   "prioritas": {
     "H7": 5,
-    "H1": 4, "H2": 4, "H3": 4, "H4": 4, "H5": 4, "H6": 4,
-    "K1": 2, "K2": 2, "K3": 2, "K4": 3, "K5": 3, "K6": 3
+    "H1": 4,
+    "H2": 4,
+    "H3": 4,
+    "H4": 4,
+    "H5": 4,
+    "H6": 4,
+    "K1": 2,
+    "K2": 2,
+    "K3": 2,
+    "K4": 3,
+    "K5": 3,
+    "K6": 3
   },
-
   "kesimpulan": {
     "K1": "Cenderung Gaya Visual",
     "K2": "Cenderung Gaya Auditori",
@@ -81,7 +404,6 @@
     "H6": "Gaya Kombinasi Auditori-Kinestetik",
     "H7": "Gaya Kombinasi Seimbang (Visual-Auditori-Kinestetik)"
   },
-
   "saran": {
     "K1": "Perkuat gaya visualmu dengan mind map, infografis, dan video pembelajaran. Tandai poin penting dengan warna.",
     "K2": "Perkuat gaya auditorimu dengan merekam materi, membaca keras, dan diskusi kelompok.",
